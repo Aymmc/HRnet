@@ -3,8 +3,7 @@ import { FormContext } from "../../FormContext";
 import states from "../../states";
 import "./style.css";
 import { NavLink } from "react-router-dom";
-import Modal from '@aymmc/react-modal-library';  // Assurez-vous que l'import est correct
-
+import Modal from "@aymmc/react-modal-library"; // Assurez-vous que l'import est correct
 
 const CreateEmploye = () => {
   const { formData, handleChange, saveEmployee } = useContext(FormContext);
@@ -26,74 +25,90 @@ const CreateEmploye = () => {
       <NavLink to="/employee-list">View Current Employee</NavLink>
       <h2>Create Employee</h2>
       <form id="create-employee" onSubmit={(e) => e.preventDefault()}>
-        <label htmlFor="firstName">First Name</label>
-        <input
-          type="text"
-          id="firstName"
-          value={formData.firstName}
-          onChange={handleChange}
-        />
 
-        <label htmlFor="lastName">Last Name</label>
-        <input
-          type="text"
-          id="lastName"
-          value={formData.lastName}
-          onChange={handleChange}
-        />
+        <div className="input">
+          <i class="fa fa-user"></i>
+          <input
+            type="text"
+            id="firstName"
+            placeholder="First Name"
+            value={formData.firstName}
+            onChange={handleChange}
+          />
+        </div>
 
-        <label htmlFor="dateOfBirth">Date of Birth</label>
-        <input
-          id="dateOfBirth"
-          type="date"
-          value={formData.dateOfBirth}
-          onChange={handleChange}
-        />
+        <div className="input">
+          <i class="fa fa-user"> </i>
+          <input
+            type="text"
+            id="lastName"
+            placeholder="Last Name"
+            value={formData.lastName}
+            onChange={handleChange}
+          />
+        </div>
 
-        <label htmlFor="startDate">Start Date</label>
-        <input
-          id="startDate"
-          type="date"
-          value={formData.startDate}
-          onChange={handleChange}
-        />
+        <div className="input">
+          <i class="fa-solid fa-cake-candles"></i>
+          <input
+            id="dateOfBirth"
+            type="date"
+            value={formData.dateOfBirth}
+            onChange={handleChange}
+          />
+        </div>
+
+        <div className="input">
+          <i class="fa-solid fa-play"></i>
+          <input
+            id="startDate"
+            type="date"
+            value={formData.startDate}
+            onChange={handleChange}
+          />
+        </div>
 
         <fieldset className="address">
           <legend>Address</legend>
-
-          <label htmlFor="street">Street</label>
-          <input
-            id="street"
-            type="text"
-            value={formData.street}
-            onChange={handleChange}
-          />
-
-          <label htmlFor="city">City</label>
-          <input
-            id="city"
-            type="text"
-            value={formData.city}
-            onChange={handleChange}
-          />
-
+          <div className="input">
+            <i class="fa-solid fa-road"></i>
+            <input
+              id="street"
+              placeholder="Street"
+              type="text"
+              value={formData.street}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="input">
+            <i class="fa-solid fa-city"></i>
+            <input
+              id="city"
+              placeholder="City"
+              type="text"
+              value={formData.city}
+              onChange={handleChange}
+            />
+          </div>
           <label htmlFor="state">State</label>
           <select id="state" value={formData.state} onChange={handleChange}>
             <option value="">Select a state</option>
-            {states.map((state) => (
-              <option key={state.abbreviation} value={state.abbreviation}>
-                {state.name}
+            {states.map((states) => (
+              <option key={states.abbreviation} value={states.abbreviation}>
+                {states.name}
               </option>
             ))}
           </select>
-
-          <label htmlFor="zipCode">Zip Code</label>
+          <div className="input"> 
+          <i class="fa-solid fa-inbox"></i>
           <input
             id="zipCode"
+            placeholder="Zip Code"
             type="number"
             value={formData.zipCode}
             onChange={handleChange}
           />
+          </div>  
         </fieldset>
 
         <label htmlFor="department">Department</label>
@@ -109,15 +124,17 @@ const CreateEmploye = () => {
           <option value="Human Resources">Human Resources</option>
           <option value="Legal">Legal</option>
         </select>
-
+            <div className="divbutton">
         <button type="button" onClick={handleSaveEmployee}>
           Save
         </button>
+        </div>
       </form>
 
       {/* Modal affichée uniquement si isModalOpen est vrai */}
-      <Modal 
-        isOpen={isOpen} onClose={() => setIsOpen(false)}
+      <Modal
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
         contentLabel="Employée Créée"
       >
         <h2>Employée créée</h2>
