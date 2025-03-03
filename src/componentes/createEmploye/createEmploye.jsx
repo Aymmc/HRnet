@@ -4,7 +4,7 @@ import states from "../../states";
 import "./style.css";
 import { NavLink } from "react-router-dom";
 import Modal from "@aymmc/react-modal-library"; // Assurez-vous que l'import est correct
-
+import Header from "../header/header";
 const CreateEmploye = () => {
   const { formData, handleChange, saveEmployee } = useContext(FormContext);
 
@@ -20,12 +20,13 @@ const CreateEmploye = () => {
   };
 
   return (
+    <>
+    <Header/>
     <section className="Create_Employe">
-      <h1>HRnet</h1>
-      <NavLink to="/employee-list">View Current Employee</NavLink>
-      <h2>Create Employee</h2>
+   
       <form id="create-employee" onSubmit={(e) => e.preventDefault()}>
-
+        <div className="divtitre">
+      <h2>Create Employee</h2></div>
         <div className="input">
           <i class="fa fa-user"></i>
           <input
@@ -140,6 +141,7 @@ const CreateEmploye = () => {
         <h2>Employée créée</h2>
       </Modal>
     </section>
+    </>
   );
 };
 

@@ -8,7 +8,34 @@ const EmployeeList = () => {
   const { employees } = useContext(FormContext); // Accéder à la liste des employés
   console.log(employees);
   const [searchTerm, setSearchTerm] = useState(""); // État pour stocker la recherche
-
+  const customStyles = {
+    table: {
+      style: {
+        boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.2)", // Ombre autour du tableau
+        borderRadius: "10px", // Coins arrondis pour un effet plus propre
+        overflow: "hidden", // Évite les débordements des bordures arrondies
+      },
+    },
+    rows: {
+      style: {
+        backgroundColor: "#f9f9f9",
+        color: "#808080",
+      },
+    },
+    headCells: {
+      style: {
+        backgroundColor: "#f9f9f9",
+        color: "#808080",
+        fontWeight: "bold",
+      },
+    },
+    cells: {
+      style: {
+        borderBottom: "1px solid #ddd",
+      },
+    },
+  };
+  
   // Filtrage des employés en fonction du terme de recherche
   const filteredEmployees = employees.filter((employee) => {
     return (
@@ -39,7 +66,7 @@ const EmployeeList = () => {
   return (
     <section className="employeeList">
       <div className="headerlist">
-      <h1>Current Employees</h1>
+      <h2>Current Employees</h2>
       {/* Champ de recherche */}
       <div>
       <input
@@ -53,6 +80,7 @@ const EmployeeList = () => {
       {/* Tableau des employés */}
       <DataTable
         title=""
+        customStyles={customStyles}
         columns={columns}
         data={filteredEmployees} // Passe les employés filtrés ici
         pagination

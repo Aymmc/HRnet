@@ -2,9 +2,17 @@
     display: flex;
     flex-direction: column;
     background-color: white;
-    padding : 30px;
+    padding: 0px 30px 30px 30px;
     border-radius: 5px;
     box-shadow: 0px 3px 10px -2px rgba(0, 0, 0, 0.2);
+}
+
+.divtitre {
+    display: flex;
+    justify-content: center;
+}
+.divtitre h2 {
+    color: #bc8200;
 }
 
 .address {
@@ -20,33 +28,38 @@
 
     border-radius: 5px;
     background-color: #f9f9f9;
-  
+
     border: 1px solid #e5e5e5;
 }
-.input{
+
+.input {
     position: relative;
     display: flex;
     align-items: center;
-    margin-top: 20px ;
+    margin-top: 20px;
 }
+
 .input i {
     position: absolute;
     left: 10px;
     color: gray;
-  }
+}
 
-#create-employee input:focus , .input i:focus {
+#create-employee input:focus,
+.input i:focus {
     border: 1px solid #bd8200;
     color: #bd8200;
     outline: none;
     transition: 0.3s;
 }
-#create-employee select:focus  {
+
+#create-employee select:focus {
     border: 1px solid #bd8200;
     color: #bd8200;
     outline: none;
     transition: 0.3s;
 }
+
 #create-employee label {
     margin-bottom: 10px;
     margin-top: 10px;
@@ -64,8 +77,9 @@
     padding: 10px;
     margin: 10px 0px;
 }
+
 .address legend {
-    color:#bd8200 ;
+    color: #bd8200;
 }
 
 .Create_Employe h2 {
@@ -78,16 +92,20 @@
     margin-top: 20px;
     font-size: 2em;
 }
-.divbutton{
+
+.divbutton {
     display: flex;
     justify-content: center;
 }
-.Create_Employe button {
+
+.divbutton button {
     width: 100px;
     height: 25px;
     margin-top: 20px;
     background-color: #f0a501;
-    border: 1px solid #bc8200 ;
+    border: 1px solid #bc8200;
+    cursor: pointer;
+    border-radius: 3px;
 }
 
 .Create_Employe select {
@@ -99,5 +117,9 @@
     text-align: left;
     white-space: nowrap;
     height: 32px;
-    
+
+}
+
+label {
+    color: #bc8200;
 }

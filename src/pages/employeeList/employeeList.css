@@ -4,3 +4,28 @@
     align-items: center;
     margin-top: 50px;
 }
+
+.employeeList .hDPlLz {
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.employeeList input {
+    padding-left: 30px;
+    width: 200px;
+    height: 35px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    border: 1px solid #e5e5e5;
+}
+
+.headerlist {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.employeeList h2 {
+    color: #bd8200;
+}
