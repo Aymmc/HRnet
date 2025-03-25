@@ -136,9 +136,9 @@ const CreateEmploye = () => {
       <Modal
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}
-        contentLabel="Employée Créée"
+        contentLabel="Employé Créé"
       >
-        <h2>Employée créée</h2>
+        <h2>Employé créé</h2>
       </Modal>
     </section>
     </>

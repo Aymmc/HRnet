@@ -6,7 +6,6 @@ import { NavLink } from "react-router-dom";
 
 const EmployeeList = () => {
   const { employees } = useContext(FormContext); // Accéder à la liste des employés
-  console.log(employees);
   const [searchTerm, setSearchTerm] = useState(""); // État pour stocker la recherche
   const customStyles = {
     table: {

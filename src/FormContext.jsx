@@ -27,10 +27,8 @@ const FormProvider = ({ children }) => {
   const saveEmployee = () => {
     setEmployees((prev) => {
       const updatedEmployees = [...prev, formData];
-      console.log("Updated Employees:", updatedEmployees); // Vérification
       return updatedEmployees;
     });
-    console.log("Form Data:", formData); // Vérification
     setFormData({
       firstName: "",
       lastName: "",
